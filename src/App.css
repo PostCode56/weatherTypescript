@@ -1,38 +1,31 @@
-.App {
-  text-align: center;
+body {
+    background: url("./assets/images/fonhull1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@media (max-width: 1500px) {
+    body {
+        background: url("./assets/images/fon1500px.png");
+        height: auto;
+    }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+    @media (min-width: 1200px) and (max-width: 1500px) {
+        body {
+            background: url("./assets/images/fon1500px.png");
+        }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+        @media (min-width: 400px) and (max-width: 925px) {
+            body {
+                background: url("./assets/images/fonmobblie.png");
+            }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+            @media (min-width: 250px) and (max-width: 399px) {
+                body {
+                    background: url("./assets/images/fonmobblie.png");
+                }
+            }
+        }
+    }
 }
