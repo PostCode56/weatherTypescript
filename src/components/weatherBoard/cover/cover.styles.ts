@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  text-align: center;
 `
 export const StyledCoverIcon = styled.img`
-  position: absolute;
   width: 600px;
   height: 600px;
-  @media (min-width: 250px) and (max-width: 399px) {
+  @media (min-width: 250px) and (max-width: 925px) {
     width: 350px;
     height: 350px;
   }
