@@ -69,8 +69,8 @@ export const StyledCloudText = styled.div`
   font-size: 48px;
   text-align: center;
   margin-left: 15px;
-  @media (min-width: 250px) and (max-width: 399px) {
-    font-size: 24px;
+  @media (min-width: 250px) and (max-width: 650px) {
+    font-size: 20px;
     margin-left: 25px;
   }
 `
