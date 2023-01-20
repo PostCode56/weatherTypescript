@@ -5,8 +5,8 @@ export const StyledContainer = styled.div`
   text-align: center;
 `
 export const StyledCoverIcon = styled.img`
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   @media (min-width: 300px) and (max-width: 925px) {
     width: 350px;
     height: 350px;
