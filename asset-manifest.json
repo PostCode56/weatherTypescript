@@ -1,16 +1,24 @@
 {
   "files": {
     "main.css": "/weatherTypescript/static/css/main.74f26648.css",
-    "main.js": "/weatherTypescript/static/js/main.335154db.js",
+    "main.js": "/weatherTypescript/static/js/main.ef0977ce.js",
+    "static/media/cloudyCover.gif": "/weatherTypescript/static/media/cloudyCover.cc97e3ef072af32793ea.gif",
     "static/media/fonmobblie.png": "/weatherTypescript/static/media/fonmobblie.a3eb16a2a7b3d8b9633f.png",
     "static/media/fon1500px.png": "/weatherTypescript/static/media/fon1500px.d7cf6b515357517552dc.png",
     "static/media/fonhull1.png": "/weatherTypescript/static/media/fonhull1.06e4417b9933bffdd2c9.png",
+    "static/media/ясно1.png": "/weatherTypescript/static/media/ясно1.1477f0ed8c7fb5f5a750.png",
+    "static/media/сильныйдождь.png": "/weatherTypescript/static/media/сильныйдождь.d7ccce86a3dc6d1b928d.png",
+    "static/media/туман.png": "/weatherTypescript/static/media/туман.a6995c0b2d0c39af2d66.png",
+    "static/media/пасмурно.png": "/weatherTypescript/static/media/пасмурно.ac7b3775b1ce05bf544e.png",
+    "static/media/дождь.png": "/weatherTypescript/static/media/дождь.800a6d5ab729a98e9d18.png",
+    "static/media/Cloud.png": "/weatherTypescript/static/media/Cloud.4872436cb92dbdd1d96e.png",
+    "static/media/грозаснебольшимдождём.png": "/weatherTypescript/static/media/грозаснебольшимдождём.0e069358775c2c854ed5.png",
     "index.html": "/weatherTypescript/index.html",
     "main.74f26648.css.map": "/weatherTypescript/static/css/main.74f26648.css.map",
-    "main.335154db.js.map": "/weatherTypescript/static/js/main.335154db.js.map"
+    "main.ef0977ce.js.map": "/weatherTypescript/static/js/main.ef0977ce.js.map"
   },
   "entrypoints": [
     "static/css/main.74f26648.css",
-    "static/js/main.335154db.js"
+    "static/js/main.ef0977ce.js"
   ]
 }
