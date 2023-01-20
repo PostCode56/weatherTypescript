@@ -12,8 +12,8 @@ export const StyledForm = styled.form`
   margin-top: 150px;
   margin-bottom: 70px;
   text-align: center;
-  @media (min-width: 250px) and (max-width: 399px) {
-    margin-top: 100px;
+  @media (min-width: 250px) and (max-width: 925px) {
+    margin-top: 50px;
     margin-bottom: 0;
   }
 `
