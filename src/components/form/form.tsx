@@ -1,6 +1,5 @@
 import React, {FC, useState} from 'react';
 import {StyledContainer, StyledInput, StyledForm, StyledSection} from "./form.styles";
-import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 import {fetchWeather} from "../../redux/store/action-creators/weatherActionCreators";
 import {useActions} from "../../redux/hooks/useAction";
 

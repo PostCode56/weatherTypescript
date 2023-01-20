@@ -6,45 +6,55 @@ import {
     StyledTempContainer,
     StyledTitleCity
 } from "./weatherCloud.styles";
+import clear from "../../assets/images/cloud/ясно1.png";
+import cloud from "../../assets/images/cloud/Cloud.png";
+import cloudy from "../../assets/images/cloud/пасмурно.png";
+import cloudCover from "../../assets/images/cloud/небобл.png";
+import partly from "../../assets/images/cloud/Cloud.png";
+import fog from "../../assets/images/cloud/туман.png";
+import minRain from "../../assets/images/cloud/небольшойдождь.png";
+import strongRain from "../../assets/images/cloud/сильныйдождь.png";
+import rain from "../../assets/images/cloud/дождь.png";
+import storm from "../../assets/images/cloud/грозаснебольшимдождём.png";
 import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 
 const WeatherCloud: FC = () => {
     const weathers = useTypedSelector(state => state.weather.weather)
-    const [cloudIconValue, setCloudIconValue] = useState("");
+    const [cloudIconValue, setCloudIconValue] = useState();
     useEffect(() => {
         cloudIconFetch();
     },)
     const cloudIconFetch = () => {
         switch (weathers.clouds) {
             case "ясно":
-                setCloudIconValue("ясно1.png");
+                setCloudIconValue(clear);
                 break;
             case "облачно с прояснениями":
-                setCloudIconValue("Cloud.png");
+                setCloudIconValue(cloud);
                 break;
             case "пасмурно":
-                setCloudIconValue("пасмурно.png");
+                setCloudIconValue(cloudy);
                 break;
             case "небольшая облачность":
-                setCloudIconValue("необл.png");
+                setCloudIconValue(cloudCover);
                 break;
             case "переменная облачность":
-                setCloudIconValue("Cloud.png");
+                setCloudIconValue(partly);
                 break;
             case "туман":
-                setCloudIconValue("туман.png");
+                setCloudIconValue(fog);
                 break;
             case "небольшой дождь":
-                setCloudIconValue("небольшойдождь.png");
+                setCloudIconValue(minRain);
                 break;
             case "сильный дождь":
-                setCloudIconValue("сильныйдождь.png");
+                setCloudIconValue(strongRain);
                 break;
             case "дождь":
-                setCloudIconValue("дождь.png");
+                setCloudIconValue(rain);
                 break;
             case "гроза с небольшим дождём":
-                setCloudIconValue("грозаснебольшимдождем.png");
+                setCloudIconValue(storm);
                 break;
         }
     }
@@ -52,7 +62,7 @@ const WeatherCloud: FC = () => {
         <StyledContainer>
             <StyledTitleCity>{weathers.city}<StyledCountry>{weathers.country}</StyledCountry></StyledTitleCity>
             <StyledCloudItems>
-                <StyledIcon id="iconCloud" src={`/cloud/${cloudIconValue}`} alt="icon"></StyledIcon>
+                <StyledIcon src={cloudIconValue} alt="icon"></StyledIcon>
                 <StyledTempContainer>
                     <StyledTemp>{Math.round(weathers.temp) + "°"}</StyledTemp>
                     <StyledCloudText>{weathers.clouds}</StyledCloudText>
