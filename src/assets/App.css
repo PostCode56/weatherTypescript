@@ -1,5 +1,5 @@
 body {
-    background: url("./assets/images/fonhull1.png");
+    background: url("images/fonhull1.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -7,23 +7,23 @@ body {
 
 @media (max-width: 1500px) {
     body {
-        background: url("./assets/images/fon1500px.png");
+        background: url("images/fon1500px.png");
         height: auto;
     }
 
     @media (min-width: 1200px) and (max-width: 1500px) {
         body {
-            background: url("./assets/images/fon1500px.png");
+            background: url("images/fon1500px.png");
         }
 
         @media (min-width: 400px) and (max-width: 925px) {
             body {
-                background: url("./assets/images/fonmobblie.png");
+                background: url("images/fonmobblie.png");
             }
 
             @media (min-width: 250px) and (max-width: 399px) {
                 body {
-                    background: url("./assets/images/fonmobblie.png");
+                    background: url("images/fonmobblie.png");
                 }
             }
         }

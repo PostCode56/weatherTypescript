@@ -15,13 +15,12 @@ const Form: FC = () => {
         <StyledSection>
             <StyledContainer>
                 <div></div>
-                <StyledForm
-                    onSubmit={(e) => weatherFetch(e)}
-                >
+                <StyledForm onSubmit={(e) => weatherFetch(e)}>
                     <StyledInput
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
-                        placeholder="Напишите город"/>
+                        placeholder="Напишите город"
+                    />
                 </StyledForm>
             </StyledContainer>
         </StyledSection>

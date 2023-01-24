@@ -2,16 +2,12 @@ import {Dispatch} from "redux";
 import {WeatherAction, WeatherActionTypes} from "../../types/weatherTypes";
 import axios from "axios";
 
-const api = {
-    key: "27f066f82abeae27bb8a026c352c04b9",
-    basic: 'https://api.openweathermap.org/data/2.5/',
-}
-
 export const fetchWeather = (inputValue: any) => {
+    const basic = 'https://api.openweathermap.org/data/2.5/';
     return async (dispatch: Dispatch<WeatherAction>) => {
         try {
             dispatch({type: WeatherActionTypes.FETCH_WEATHER})
-            const responce = await axios(`${api.basic}weather?q=${inputValue}&lang=ru&units=metric&appid=${api.key}`)
+            const responce = await axios(`${basic}weather?q=${inputValue}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
             setTimeout(() => {
                 dispatch({
                     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS,
@@ -28,7 +24,6 @@ export const fetchWeather = (inputValue: any) => {
                     loadClouds: responce.data.weather[0].description,
                 })
             }, 500)
-            console.log(responce.data)
         } catch (e) {
             alert("Произошла ошибка при загрузке данных с сервера!")
             dispatch({
