@@ -1,6 +1,7 @@
-import {WeatherAction, WeatherState, WeatherActionTypes} from "../types/weatherTypes";
+import {WeatherAction, WeatherActionTypes, WeatherState} from "../types/weatherTypes";
 
 const initialState: WeatherState = {
+    errorModal: false,
     weather: {
         country: null,
         temp: 0,
@@ -21,24 +22,13 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
     switch (action.type) {
         case WeatherActionTypes.FETCH_WEATHER:
             return {
-                loading: true,
-                error: null,
+                ...state,
                 cover: false,
-                weather: {
-                    country: null,
-                    temp: 0,
-                    feels_lik: 0,
-                    max_temp: 0,
-                    min_temp: 0,
-                    city: null,
-                    pressure: 0,
-                    humidity: 0,
-                    wind: 0,
-                    clouds: null,
-                }
+                loading: true
             }
         case WeatherActionTypes.FETCH_WEATHER_SUCCESS:
             return {
+                ...state,
                 loading: false,
                 error: null,
                 cover: false,
@@ -57,21 +47,16 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
             }
         case WeatherActionTypes.FETCH_WEATHER_ERROR:
             return {
-                loading: false,
+                ...state,
                 cover: true,
-                error: action.payload,
-                weather: {
-                    country: null,
-                    temp: 0,
-                    feels_lik: 0,
-                    max_temp: 0,
-                    min_temp: 0,
-                    city: null,
-                    pressure: 0,
-                    humidity: 0,
-                    wind: 0,
-                    clouds: null,
-                }
+                loading: false
+            }
+        case WeatherActionTypes.MODAL_ERROR:
+            return {
+                ...state,
+                cover: false,
+                loading: false,
+                errorModal: action.loadError
             }
         default:
             return state;

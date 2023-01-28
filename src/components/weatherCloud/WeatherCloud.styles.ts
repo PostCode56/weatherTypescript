@@ -4,21 +4,24 @@ export const StyledContainer = styled.div`
   width: 50%;
   margin: 0 auto;
   color: white;
+  @media (min-width: 926px) and (max-width: 1024px) {
+    margin-right: 45px;
+  }
   @media (min-width: 250px) and (max-width: 925px) {
     width: 90%;
   }
 `
 export const StyledTitleCity = styled.div`
-  font-size: 120px;
+  font-size: 84px;
   text-align: left;
   padding-left: 25px;
   display: flex;
-  @media (min-width: 651px) and (max-width: 925px) {
-    font-size: 82px;
+  @media (min-width: 651px) and (max-width: 1280px) {
+    font-size: 64px;
     padding-left: 0;
   }
   @media (min-width: 250px) and (max-width: 650px) {
-    font-size: 48px;
+    font-size: 42px;
     padding-left: 0;
   }
 `
@@ -48,13 +51,9 @@ export const StyledTempContainer = styled.div`
 `
 export const StyledTemp = styled.div`
   margin-top: 15px;
-  font-size: 144px;
+  font-size: 124px;
   text-align: center;
-  @media (min-width: 926px) and (max-width: 1500px) {
-    margin-top: 0;
-    font-size: 92px;
-  }
-  @media (min-width: 250px) and (max-width: 925px) {
+  @media (min-width: 250px) and (max-width: 1500px) {
     margin-top: 0;
     font-size: 92px;
   }
@@ -69,6 +68,10 @@ export const StyledCloudText = styled.div`
   font-size: 48px;
   text-align: center;
   margin-left: 15px;
+  @media (min-width: 926px) and (max-width: 1280px) {
+    font-size: 24px;
+    margin-left: 25px;
+  }
   @media (min-width: 250px) and (max-width: 925px) {
     font-size: 20px;
     margin-left: 25px;

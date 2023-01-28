@@ -1,13 +1,15 @@
 import {Dispatch} from "redux";
 import {WeatherAction, WeatherActionTypes} from "../../types/weatherTypes";
+import {WEATHER_API_URL} from "../../../components/search/api";
 import axios from "axios";
 
-export const fetchWeather = (inputValue: any) => {
-    const basic = 'https://api.openweathermap.org/data/2.5/';
+export const fetchWeather = (searchData: any) => {
     return async (dispatch: Dispatch<WeatherAction>) => {
         try {
             dispatch({type: WeatherActionTypes.FETCH_WEATHER})
-            const responce = await axios(`${basic}weather?q=${inputValue}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
+            const [lat, lon] = searchData.value.split(" ");
+            const [cityName, country] = searchData.label.split(" ")
+            const responce = await axios.get(`${WEATHER_API_URL}lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
             setTimeout(() => {
                 dispatch({
                     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS,
@@ -17,7 +19,7 @@ export const fetchWeather = (inputValue: any) => {
                     loadFeelsLik: responce.data.main.feels_like,
                     loadMaxTemp: responce.data.main.temp_max,
                     loadMinTemp: responce.data.main.temp_min,
-                    loadCity: responce.data.name,
+                    loadCity: cityName,
                     loadPressure: responce.data.main.pressure,
                     loadHumidity: responce.data.main.humidity,
                     loadWind: responce.data.wind.speed,
@@ -25,11 +27,8 @@ export const fetchWeather = (inputValue: any) => {
                 })
             }, 500)
         } catch (e) {
-            alert("Произошла ошибка при загрузке данных с сервера!")
-            dispatch({
-                type: WeatherActionTypes.FETCH_WEATHER_ERROR,
-                payload: 'Произошла ошибка при загрузке данных с сервера!'
-            })
+            dispatch({type: WeatherActionTypes.MODAL_ERROR, loadError: true})
+            console.log("Ошибка")
         }
     }
 }

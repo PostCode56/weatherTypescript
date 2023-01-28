@@ -8,7 +8,7 @@ export const StyledContainer = styled.div`
   width: 70%;
   margin: 0 auto;
 `
-export const StyledForm = styled.form`
+export const StyledForm = styled.div`
   margin-top: 150px;
   margin-bottom: 70px;
   text-align: center;
@@ -29,14 +29,4 @@ export const StyledInput = styled.input`
   @media (min-width: 250px) and (max-width: 399px) {
     width: 90%;
   }
-`
-export const StyledButton = styled.button`
-  width: 20%;
-  height: 40px;
-  font-size: 18px;
-  background: lightgray;
-  border: none;
-  outline: none;
-  border-radius: 15px;
-  margin-left: 8px;
 `

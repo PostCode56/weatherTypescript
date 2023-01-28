@@ -4,7 +4,7 @@ import {
     StyledItems,
     StyledParameters, StyledSection,
     StyledTitle
-} from "./weatherParameters.styles";
+} from "./WeatherParameters.styles";
 import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 
 const WeatherParameters: FC = () => {
@@ -16,15 +16,15 @@ const WeatherParameters: FC = () => {
             <StyledContainer>
                 <StyledItems>
                     <StyledParameters>
-                        {Math.round(weathers.feels_lik) + "°"}
+                        {Math.round(weathers.feels_lik)}°
                         <StyledTitle>Чувствуется</StyledTitle>
                     </StyledParameters>
                     <StyledParameters>
-                        {Math.round(weathers.humidity) + "%"}
+                        {Math.round(weathers.humidity)}%
                         <StyledTitle>Влажность</StyledTitle>
                     </StyledParameters>
                     <StyledParameters>
-                        {weathers.max_temp + "°"}
+                        {weathers.max_temp}°
                         <StyledTitle>Максимальная t</StyledTitle>
                     </StyledParameters>
                 </StyledItems>
@@ -38,7 +38,7 @@ const WeatherParameters: FC = () => {
                         <StyledTitle>Ветер м/с</StyledTitle>
                     </StyledParameters>
                     <StyledParameters>
-                        {weathers.min_temp + "°"}
+                        {weathers.min_temp}°
                         <StyledTitle>Минимальная t</StyledTitle>
                     </StyledParameters>
                 </StyledItems>
