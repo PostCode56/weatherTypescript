@@ -20,11 +20,11 @@ const Search: FC = () => {
                 })
 
             }
-        } catch (e){
+        } catch (e) {
             return {
-                options:{
-                value: ``,
-                label: ``
+                options: {
+                    value: ``,
+                    label: ``
                 }
             }
         }
