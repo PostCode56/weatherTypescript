@@ -7,19 +7,27 @@ import {fetchWeather} from "../../redux/store/action-creators/weatherActionCreat
 const Search: FC = () => {
     const [search, setSearch] = useState(null)
     const {fetchWeather} = useActions();
-    const loadOption = (inputValue: any) => {
-        return fetch(`${GEO_API_URL}/cities?minPopulation=100000&languageCode=Ru&namePrefix=${inputValue}`, geoApiOptions)
-            .then(datas => datas.json()).then(datas => {
-                return {
-                    options: datas.data.map((city: any) => {
-                        return {
-                            value: `${city.latitude} ${city.longitude}`,
-                            label: `${city.name} ${city.countryCode}`
-                        }
-                    })
+    const loadOption = async (inputValue: any) => {
+        const datas = await fetch(`${GEO_API_URL}/cities?minPopulation=100000&languageCode=Ru&namePrefix=${inputValue}`, geoApiOptions)
+            .then(datas => datas.json())
+        try {
+            return {
+                options: datas.data.map((city: any) => {
+                    return {
+                        value: `${city.latitude} ${city.longitude}`,
+                        label: `${city.name} ${city.countryCode}`
+                    }
+                })
 
+            }
+        } catch (e){
+            return {
+                options:{
+                value: ``,
+                label: ``
                 }
-            })
+            }
+        }
     }
     const onSearchChange = (searchData: any) => {
         fetchWeather(searchData)
