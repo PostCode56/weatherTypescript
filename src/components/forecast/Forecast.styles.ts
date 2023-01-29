@@ -74,7 +74,7 @@ export const StyledTextTemp = styled.div`
 `
 export const StyledCloudText = styled.div`
   overflow-wrap: break-word;
-  max-width: 150px;
+  max-width: 160px;
   font-size: 20px;
   margin: 10px 0;
   height: 36px;
