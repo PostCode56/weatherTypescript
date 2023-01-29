@@ -9,16 +9,16 @@ export const StyledSection = styled.section`
   border-radius: 15px;
   @media (min-width: 250px) and (max-width: 925px) {
     flex-direction: column;
+    margin: 5px auto;
   }
 `
 export const StyledContainer = styled.div`
   margin: 0 auto;
   text-align: center;
-  padding: 30px;
+  padding: 50px;
   color: white;
   @media (min-width: 926px) and (max-width: 1500px) {
     padding: 10px;
-    margin-top: 10px;
   }
   @media (min-width: 250px) and (max-width: 925px) {
     padding: 10px;
@@ -29,8 +29,8 @@ export const StyledContainer = styled.div`
 `
 export const StyledIcon = styled.img`
   @media (min-width: 250px) and (max-width: 650px) {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 `
 export const StyledText = styled.div`

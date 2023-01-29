@@ -55,7 +55,7 @@ export const StyledTemp = styled.div`
   text-align: center;
   @media (min-width: 250px) and (max-width: 1500px) {
     margin-top: 0;
-    font-size: 92px;
+    font-size: 82px;
   }
 `
 export const StyledCountry = styled.div`

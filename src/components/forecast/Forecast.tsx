@@ -20,10 +20,16 @@ const Forecast: FC = () => {
     const data = useTypedSelector(state => state.weather.forecast)
     const basicIcon = "https://openweathermap.org/img/wn/"
     const WEEK_DAY = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+    const loading = useTypedSelector(state => state.weather.loading)
     const dainInWeek = new Date().getDay()
     const forecastDay = WEEK_DAY.slice(dainInWeek, WEEK_DAY.length).concat(WEEK_DAY.slice(0, dainInWeek))
     return (
-        <Accordion allowZeroExpanded>
+        <Accordion allowZeroExpanded
+                   style={{
+                       visibility: loading
+                           ? "hidden"
+                           : "visible"
+                   }}>
             <StyledSection>
                 {data.splice(0, 6).map((item, idx) => (
                     <AccordionItem key={idx}>
