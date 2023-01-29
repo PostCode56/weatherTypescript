@@ -44,7 +44,6 @@ const Forecast: FC = () => {
                                 </StyledContainer>
                             </AccordionItemButton>
                         </AccordionItemHeading>
-                        <AccordionItemPanel></AccordionItemPanel>
                     </AccordionItem>
                 ))}
             </StyledSection>
