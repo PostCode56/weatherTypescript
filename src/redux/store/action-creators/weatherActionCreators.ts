@@ -13,7 +13,6 @@ export const fetchWeather = (searchData: any) => {
             setTimeout(() => {
                 dispatch({
                     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS,
-                    payload: responce.data,
                     loadCountry: responce.data.sys.country,
                     loadTemp: responce.data.main.temp,
                     loadFeelsLik: responce.data.main.feels_like,
@@ -28,7 +27,6 @@ export const fetchWeather = (searchData: any) => {
             }, 500)
         } catch (e) {
             dispatch({type: WeatherActionTypes.MODAL_ERROR, loadError: true})
-            console.log("Ошибка")
         }
     }
 }

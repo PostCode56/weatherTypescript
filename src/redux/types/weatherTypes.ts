@@ -1,5 +1,4 @@
 export interface WeatherState {
-    errorModal: boolean,
     weather: {
         country: null | string,
         temp: number,
@@ -13,15 +12,14 @@ export interface WeatherState {
         clouds: null | string
     },
     loading: boolean,
-    error: null | string,
     cover: boolean,
+    errorModal: boolean,
 }
 
 export enum WeatherActionTypes {
     MODAL_ERROR = "MODAL_ERROR",
     FETCH_WEATHER = "FETCH_WEATHER",
     FETCH_WEATHER_SUCCESS = "FETCH_WEATHER_SUCCESS",
-    FETCH_WEATHER_ERROR = "FETCH_WEATHER_ERROR"
 }
 
 interface ModalErrorAction {
@@ -35,7 +33,6 @@ interface FetchWeatherAction {
 
 interface FetchWeatherSuccessAction {
     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS;
-    payload: string,
     loadCountry: string,
     loadTemp: number,
     loadFeelsLik: number,
@@ -48,9 +45,4 @@ interface FetchWeatherSuccessAction {
     loadClouds: string,
 }
 
-interface FetchWeatherErrorAction {
-    type: WeatherActionTypes.FETCH_WEATHER_ERROR;
-    payload: string
-}
-
-export type WeatherAction = FetchWeatherAction | FetchWeatherSuccessAction | FetchWeatherErrorAction | ModalErrorAction
+export type WeatherAction = FetchWeatherAction | FetchWeatherSuccessAction | ModalErrorAction

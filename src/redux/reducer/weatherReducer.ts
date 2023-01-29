@@ -1,7 +1,6 @@
 import {WeatherAction, WeatherActionTypes, WeatherState} from "../types/weatherTypes";
 
 const initialState: WeatherState = {
-    errorModal: false,
     weather: {
         country: null,
         temp: 0,
@@ -16,7 +15,7 @@ const initialState: WeatherState = {
     },
     loading: true,
     cover: true,
-    error: null,
+    errorModal: false,
 }
 export const weatherReducer = (state = initialState, action: WeatherAction): WeatherState => {
     switch (action.type) {
@@ -30,7 +29,6 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
             return {
                 ...state,
                 loading: false,
-                error: null,
                 cover: false,
                 weather: {
                     country: action.loadCountry,
@@ -44,12 +42,6 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
                     wind: action.loadWind,
                     clouds: action.loadClouds,
                 }
-            }
-        case WeatherActionTypes.FETCH_WEATHER_ERROR:
-            return {
-                ...state,
-                cover: true,
-                loading: false
             }
         case WeatherActionTypes.MODAL_ERROR:
             return {
