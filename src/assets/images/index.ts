@@ -10,5 +10,7 @@ export {default as rain} from './cloud/дождь.png';
 export {default as storm} from './cloud/грозаснебольшимдождём.png';
 export {default as snow} from './cloud/небольшойснег.png';
 export {default as error} from './cloud/error.png';
+export {default as loader} from './cloud/Loader.png';
+
 
 

@@ -4,14 +4,12 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
 `
-export const StyledLoading = styled.div`
+export const StyledLoading = styled.img`
   margin-top: 100px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 10px dashed white;
+  width: 350px;
+  height: 350px;
   animation: rotate 1s infinite linear;
-  @media (min-width: 250px) and (max-width: 399px) {
+  @media (min-width: 250px) and (max-width: 650px) {
     width: 150px;
     height: 150px;
   }
