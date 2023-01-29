@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {WeatherAction, WeatherActionTypes} from "../../types/weatherTypes";
-import {WEATHER_API_URL} from "../../../components/search/api";
+import {FORECAST_API_URL, WEATHER_API_URL} from "../../../components/search/api";
 import axios from "axios";
 
 export const fetchWeather = (searchData: any) => {
@@ -10,9 +10,12 @@ export const fetchWeather = (searchData: any) => {
             const [lat, lon] = searchData.value.split(" ");
             const [cityName, country] = searchData.label.split(" ")
             const responce = await axios.get(`${WEATHER_API_URL}lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
+            await fetch(`${FORECAST_API_URL}lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
+                .then(datas => datas.json()).then(datas => {
             setTimeout(() => {
                 dispatch({
                     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS,
+                    loadForecast: datas.list,
                     loadCountry: responce.data.sys.country,
                     loadTemp: responce.data.main.temp,
                     loadFeelsLik: responce.data.main.feels_like,
@@ -25,6 +28,7 @@ export const fetchWeather = (searchData: any) => {
                     loadClouds: responce.data.weather[0].description,
                 })
             }, 500)
+                })
         } catch (e) {
             dispatch({type: WeatherActionTypes.MODAL_ERROR, loadError: true})
         }

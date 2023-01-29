@@ -13,6 +13,7 @@ const initialState: WeatherState = {
         wind: 0,
         clouds: null,
     },
+    forecast:[],
     loading: true,
     cover: true,
     errorModal: false,
@@ -30,6 +31,7 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
                 ...state,
                 loading: false,
                 cover: false,
+                forecast:action.loadForecast,
                 weather: {
                     country: action.loadCountry,
                     temp: action.loadTemp,

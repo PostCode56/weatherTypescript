@@ -6,7 +6,7 @@ export const StyledSection = styled.div`
   justify-content: center;
 `
 export const StyledContainer = styled.div`
-  width: 80%;
+  width: 85%;
   display: flex;
   margin: 0 auto;
   @media (min-width: 250px) and (max-width: 925px) {

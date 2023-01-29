@@ -12,7 +12,7 @@ export const StyledContainer = styled.div`
   width: 100%;
   margin-top: 60px;
   padding: 25px 0;
-  background: rgba(209, 209, 209, 0.4);;
+  background: rgba(209, 209, 209, 0.4);
   border-radius: 20px;
   @media (min-width: 250px) and (max-width: 399px) {
     margin-top: 20px;
@@ -30,7 +30,7 @@ export const StyledParameters = styled.div`
   padding: 25px 0;
   font-size: 48px;
   @media (min-width: 651px) and (max-width: 1500px) {
-    font-size: 42px;
+    font-size: 38px;
   }
   @media (min-width: 400px) and (max-width: 650px) {
     font-size: 32px;
@@ -41,11 +41,9 @@ export const StyledParameters = styled.div`
 `
 export const StyledTitle = styled.div`
   font-size: 22px;
-  @media (min-width: 926px) and (max-width: 1500px) {
-    font-size: 20px;
-  }
-  @media (min-width: 651px) and (max-width: 925px) {
-    font-size: 18px;
+
+  @media (min-width: 651px) and (max-width: 1500px) {
+    font-size: 16px;
   }
   @media (min-width: 400px) and (max-width: 650px) {
     font-size: 14px;

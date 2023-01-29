@@ -9,8 +9,6 @@ import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 
 const WeatherParameters: FC = () => {
     const weathers = useTypedSelector(state => state.weather.weather)
-    const weats = useTypedSelector(state => state.weather)
-    console.log(weats)
     return (
         <StyledSection>
             <StyledContainer>

@@ -11,6 +11,7 @@ export interface WeatherState {
         wind: number,
         clouds: null | string
     },
+    forecast: any[],
     loading: boolean,
     cover: boolean,
     errorModal: boolean,
@@ -33,6 +34,7 @@ interface FetchWeatherAction {
 
 interface FetchWeatherSuccessAction {
     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS;
+    loadForecast:[],
     loadCountry: string,
     loadTemp: number,
     loadFeelsLik: number,
