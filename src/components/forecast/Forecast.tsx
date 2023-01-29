@@ -5,7 +5,6 @@ import {
     AccordionItem,
     AccordionItemButton,
     AccordionItemHeading,
-    AccordionItemPanel
 } from "react-accessible-accordion";
 import {
     StyledCloudText,
