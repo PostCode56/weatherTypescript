@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/weatherTypescript/static/css/main.74f26648.css",
-    "main.js": "/weatherTypescript/static/js/main.97157e0b.js",
+    "main.js": "/weatherTypescript/static/js/main.54b57a6e.js",
     "static/media/cloudyCover.gif": "/weatherTypescript/static/media/cloudyCover.cc97e3ef072af32793ea.gif",
     "static/media/fonmobblie.png": "/weatherTypescript/static/media/fonmobblie.a3eb16a2a7b3d8b9633f.png",
     "static/media/fon1500px.png": "/weatherTypescript/static/media/fon1500px.d7cf6b515357517552dc.png",
+    "static/media/Loader.png": "/weatherTypescript/static/media/Loader.3fef278225af0ebd40bd.png",
     "static/media/fonhull1.png": "/weatherTypescript/static/media/fonhull1.06e4417b9933bffdd2c9.png",
     "static/media/error.png": "/weatherTypescript/static/media/error.3b9227ff0b1ef1392cda.png",
     "static/media/небольшойснег.png": "/weatherTypescript/static/media/небольшойснег.ad6e1374b82e03d15bc8.png",
@@ -17,10 +18,10 @@
     "static/media/грозаснебольшимдождём.png": "/weatherTypescript/static/media/грозаснебольшимдождём.0e069358775c2c854ed5.png",
     "index.html": "/weatherTypescript/index.html",
     "main.74f26648.css.map": "/weatherTypescript/static/css/main.74f26648.css.map",
-    "main.97157e0b.js.map": "/weatherTypescript/static/js/main.97157e0b.js.map"
+    "main.54b57a6e.js.map": "/weatherTypescript/static/js/main.54b57a6e.js.map"
   },
   "entrypoints": [
     "static/css/main.74f26648.css",
-    "static/js/main.97157e0b.js"
+    "static/js/main.54b57a6e.js"
   ]
 }
