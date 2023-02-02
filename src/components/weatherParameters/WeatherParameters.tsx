@@ -4,10 +4,10 @@ import {
     StyledItems,
     StyledParameters, StyledSection,
     StyledTitle
-} from "./WeatherParameters.styles";
+} from "./styledWeatherParameters";
 import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 
-const WeatherParameters: FC = () => {
+export const WeatherParameters: FC = () => {
     const weathers = useTypedSelector(state => state.weather.weather)
     return (
         <StyledSection>
@@ -44,5 +44,3 @@ const WeatherParameters: FC = () => {
         </StyledSection>
     );
 };
-
-export default WeatherParameters;

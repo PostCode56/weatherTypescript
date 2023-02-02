@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  justify-content: center;
-`
 export const StyledContainer = styled.div`
   width: 85%;
   display: flex;

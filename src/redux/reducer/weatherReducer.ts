@@ -13,10 +13,10 @@ const initialState: WeatherState = {
         wind: 0,
         clouds: null,
     },
-    forecast:[],
-    loading: true,
+    forecast: {list: []},
+    loading: false,
     cover: true,
-    errorModal: false,
+    error: false,
 }
 export const weatherReducer = (state = initialState, action: WeatherAction): WeatherState => {
     switch (action.type) {
@@ -24,14 +24,16 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
             return {
                 ...state,
                 cover: false,
-                loading: true
+                loading: true,
             }
         case WeatherActionTypes.FETCH_WEATHER_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 cover: false,
-                forecast:action.loadForecast,
+                forecast: {
+                    list: action.loadForecast
+                },
                 weather: {
                     country: action.loadCountry,
                     temp: action.loadTemp,
@@ -45,12 +47,12 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
                     clouds: action.loadClouds,
                 }
             }
-        case WeatherActionTypes.MODAL_ERROR:
+        case WeatherActionTypes.ERROR:
             return {
                 ...state,
                 cover: false,
                 loading: false,
-                errorModal: action.loadError
+                error: action.loadError,
             }
         default:
             return state;

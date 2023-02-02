@@ -50,5 +50,8 @@ export const cloudIconFetch = ({weathers, setCloudIconValue}: any) => {
         case "снег":
             setCloudIconValue(snow);
             break;
+        case "небольшой снегопад":
+            setCloudIconValue(snow);
+            break;
     }
 }

@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {StyledContainer, StyledCoverIcon, StyledTitle} from "./cover.styles";
+import {StyledContainer, StyledCoverIcon, StyledTitle} from "./styledCover";
 import cover from "../../../assets/images/cloudyCover.gif"
 
-const Cover:FC = () => {
+export const Cover:FC = () => {
     return (
         <StyledContainer>
             <StyledCoverIcon src={cover}/>
@@ -10,5 +10,3 @@ const Cover:FC = () => {
         </StyledContainer>
     );
 };
-
-export default Cover;

@@ -4,10 +4,10 @@ import {
     StyledImg, StyledItems,
     StyledSection,
     StyledTitleError
-} from "./ErrorModal.styles";
+} from "./styledError";
 import {error} from '../../assets/images/index'
 
-const ErrorModal: FC = () => {
+export const Error: FC = () => {
     return (
         <StyledSection>
             <StyledContainer>
@@ -22,4 +22,3 @@ const ErrorModal: FC = () => {
     );
 };
 
-export default ErrorModal;

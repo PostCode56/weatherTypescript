@@ -13,13 +13,13 @@ import {
     StyledSection,
     StyledText,
     StyledTextTemp
-} from "./Forecast.styles";
+} from "./styledForecast";
 
-const Forecast: FC = () => {
-    const data = useTypedSelector(state => state.weather.forecast)
+export const Forecast: FC = () => {
+    const data = useTypedSelector(state => state.weather.forecast.list)
+    const loading = useTypedSelector(state => state.weather.loading)
     const basicIcon = "https://openweathermap.org/img/wn/"
     const WEEK_DAY = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-    const loading = useTypedSelector(state => state.weather.loading)
     const dainInWeek = new Date().getDay()
     const forecastDay = WEEK_DAY.slice(dainInWeek, WEEK_DAY.length).concat(WEEK_DAY.slice(0, dainInWeek))
     return (
@@ -35,8 +35,7 @@ const Forecast: FC = () => {
                         <AccordionItemHeading>
                             <AccordionItemButton>
                                 <StyledContainer>
-                                    <StyledIcon src={`${basicIcon}${item.weather[0].icon}@2x.png`}
-                                                alt=""/>
+                                    <StyledIcon src={`${basicIcon}${item.weather[0].icon}@2x.png`} alt=""/>
                                     <StyledText>{forecastDay[idx]}</StyledText>
                                     <StyledCloudText>{item.weather[0].description}</StyledCloudText>
                                     <StyledTextTemp>{Math.round(item.main.temp_min)}°/{Math.round(item.main.temp_max)}°</StyledTextTemp>
@@ -49,5 +48,3 @@ const Forecast: FC = () => {
         </Accordion>
     );
 };
-
-export default Forecast;

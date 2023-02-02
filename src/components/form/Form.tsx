@@ -1,8 +1,8 @@
 import React, {FC} from 'react';
-import {StyledContainer, StyledForm, StyledSection} from "./Form.styles";
-import Search from "../search/Search";
+import {StyledContainer, StyledForm, StyledSection} from "./styledForm";
+import {Search} from "../index"
 
-const Form: FC = () => {
+export const Form: FC = () => {
     return (
         <StyledSection>
             <StyledContainer>
@@ -13,4 +13,3 @@ const Form: FC = () => {
         </StyledSection>
     );
 };
-export default Form;

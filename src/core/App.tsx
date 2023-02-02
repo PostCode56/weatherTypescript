@@ -1,8 +1,6 @@
 import React, {FC} from 'react';
-import Form from "../components/form/Form";
+import {Form, WeatherBoard, Forecast} from "../components/";
 import '../assets/App.css'
-import WeatherBoard from "../components/weatherBoard/WeatherBoard";
-import Forecast from "../components/forecast/Forecast";
 
 const App: FC = () => {
     return (

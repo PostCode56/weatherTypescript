@@ -5,11 +5,11 @@ import {
     StyledIcon, StyledTemp,
     StyledTempContainer,
     StyledTitleCity
-} from "./WeatherCloud.styles";
+} from "./styledWeatherCloud";
 import {useTypedSelector} from "../../redux/hooks/useTypeSelector";
 import {cloudIconFetch} from "../../utils/cloudIconFetch";
 
-const WeatherCloud: FC = () => {
+export const WeatherCloud: FC = () => {
     const weathers = useTypedSelector(state => state.weather.weather)
     const [cloudIconValue, setCloudIconValue] = useState("");
     useEffect(() => {
@@ -33,5 +33,3 @@ const WeatherCloud: FC = () => {
         </StyledContainer>
     );
 };
-
-export default WeatherCloud;

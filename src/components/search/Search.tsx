@@ -1,38 +1,15 @@
 import React, {FC, useState} from 'react';
 import {AsyncPaginate} from "react-select-async-paginate";
 import {useActions} from "../../redux/hooks/useAction";
-import {GEO_API_URL, geoApiOptions} from "./api";
-import {fetchWeather} from "../../redux/store/action-creators/weatherActionCreators";
+import {fetchWeather, searchLoad} from "../../redux/reducer/action-creators/weatherActionCreators";
 
-const Search: FC = () => {
+export const Search: FC = () => {
     const [search, setSearch] = useState(null)
     const {fetchWeather} = useActions();
-    const loadOption = async (inputValue: any) => {
-        const data = await fetch(`${GEO_API_URL}/cities?minPopulation=100000&languageCode=Ru&namePrefix=${inputValue}`, geoApiOptions)
-            .then(data => data.json())
-        try {
-            return {
-                options: data.data.map((city: any) => {
-                    return {
-                        value: `${city.latitude} ${city.longitude}`,
-                        label: `${city.name} ${city.countryCode}`
-                    }
-                })
-
-            }
-        } catch (e) {
-            return {
-                options: {
-                    value: ``,
-                    label: ``
-                }
-            }
-        }
-    }
-    const onSearchChange = (searchData: any) => {
+    const onSearchChange = (searchData: null) => {
         fetchWeather(searchData)
     }
-    const haddleOnChange = (searchData: any) => {
+    const haddleOnChange = (searchData: null) => {
         setSearch(searchData)
         onSearchChange(searchData);
     }
@@ -42,9 +19,7 @@ const Search: FC = () => {
             debounceTimeout={600}
             value={search}
             onChange={haddleOnChange}
-            loadOptions={loadOption}
+            loadOptions={(inputValue) => searchLoad(inputValue)}
         />
     );
 };
-
-export default Search;

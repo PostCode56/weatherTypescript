@@ -22,6 +22,7 @@
   },
   "include": [
     "src",
-    "src/assets/index.d.ts"
+    "src/assets/index.d.ts",
+    "src/redux/types/forecastTypes.d.ts"
   ]
 }
