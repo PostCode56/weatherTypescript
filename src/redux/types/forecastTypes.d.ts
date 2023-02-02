@@ -45,7 +45,7 @@ export declare module forecastTypes {
         dt_txt: string;
     }
 
-    export interface RootList {
+    export interface RootType {
         list: List[];
     }
 }

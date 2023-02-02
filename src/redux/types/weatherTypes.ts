@@ -12,7 +12,7 @@ export interface WeatherState{
         wind: number,
         clouds: null | string
     },
-    forecast: forecastTypes.RootList,
+    forecast: forecastTypes.RootType,
     loading: boolean,
     cover: boolean,
     error: boolean,
