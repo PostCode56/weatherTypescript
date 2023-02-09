@@ -1,6 +1,6 @@
 import {Dispatch} from "redux";
 import {WeatherAction, WeatherActionTypes} from "../../types/weatherTypes";
-import {FORECAST_API_URL, GEO_API_URL, geoApiOptions, WEATHER_API_URL} from "../../../utils/api";
+import {basic, FORECAST_API_URL, GEO_API_URL, geoApiOptions, WEATHER_API_URL} from "../../../utils/api";
 import axios from "axios";
 
 export const searchLoad = async (inputValue: string) => {
@@ -31,8 +31,8 @@ export const fetchWeather = (searchData: any) => {
             dispatch({type: WeatherActionTypes.FETCH_WEATHER})
             const [lat, lon] = searchData.value.split(" ");
             const [cityName, country] = searchData.label.split(" ")
-            const responce = await axios.get(`${WEATHER_API_URL}lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
-            const forecastData = await axios.get(`${FORECAST_API_URL}lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${process.env.REACT_APP_KEY}`)
+            const responce = await axios.get(`${WEATHER_API_URL}lat=${lat}&lon=${lon}${basic}${process.env.REACT_APP_KEY}`)
+            const forecastData = await axios.get(`${FORECAST_API_URL}lat=${lat}&lon=${lon}${basic}${process.env.REACT_APP_KEY}`)
             setTimeout(() => {
                 dispatch({
                     type: WeatherActionTypes.FETCH_WEATHER_SUCCESS,
